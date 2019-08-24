@@ -1,5 +1,5 @@
 clear;
-rec = false;
+rec = true;
 
 if rec
 	recObj = audiorecorder;
@@ -14,6 +14,9 @@ else
     clear y;
 end
 
+sound(x, Fs);
+pause;
+
 b = [1];
 tau = 0.05;
 D = tau * Fs;
@@ -21,6 +24,3 @@ a = [1,zeros(1,round(D)),0.7];
  
 y = filter (b,a,x);
 sound(y, Fs);
-
-
-
