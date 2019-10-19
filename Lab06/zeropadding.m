@@ -1,0 +1,12 @@
+load('sinal.mat');
+N = length(x);
+n = 0:N-1;
+[Xdtft,wdtft] = dtft(x/N,n);
+Xdft = fft(x/N);
+wdft = linspace(0,2*pi-2*pi/N,N);
+plot(wdtft,abs(Xdtft));
+hold on;
+x2 = 2*2*cos(n*3*pi/4) + 2*1.5*cos(n*pi/5) + 2*1*cos(n*pi/3);
+[X2dtft,w2dtft] = dtft(x2/N,n);
+X2dft = fft(x2/N);
+plot(w2dtft,abs(X2dtft));
